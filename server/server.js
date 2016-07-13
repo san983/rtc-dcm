@@ -1,4 +1,4 @@
-var HTTPS_PORT = 8443;
+//var HTTPS_PORT = 8443;
 
 var fs = require('fs');
 var https = require('https');
@@ -27,7 +27,8 @@ var handleRequest = function(request, response) {
 };
 
 var httpsServer = https.createServer(serverConfig, handleRequest);
-httpsServer.listen(HTTPS_PORT, '0.0.0.0');
+//httpsServer.listen(HTTPS_PORT, '0.0.0.0');
+httpsServer.listen(process.env.PORT || 8443);
 
 // ----------------------------------------------------------------------------------------
 
@@ -48,4 +49,4 @@ wss.broadcast = function(data) {
     }
 };
 
-console.log('Server running. Visit https://localhost:' + HTTPS_PORT + ' in Firefox/Chrome (note the HTTPS; there is no HTTP -> HTTPS redirect!)');
+console.log('Server running. Visit https://localhost:' + process.env.PORT + ' in Firefox/Chrome (note the HTTPS; there is no HTTP -> HTTPS redirect!)');

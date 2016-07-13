@@ -1,1 +1,13 @@
-{}
+{
+  "name": "rtc-dcm",
+  "version": "0.0.1",
+  "private": true,
+  "main": "../server/server.js",
+  "engines": {
+    "node": "4.4.5"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
