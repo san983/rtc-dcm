@@ -17,7 +17,7 @@ function pageReady() {
     remoteVideo = document.getElementById('remoteVideo');
 
     var HOST = location.origin.replace(/^http/, 'ws')
-    serverConnection = new WebSocket('wss://' + window.location.hostname + ':5000');
+    var serverConnection = new WebSocket(HOST);
     serverConnection.onmessage = gotMessageFromServer;
 
     var constraints = {
